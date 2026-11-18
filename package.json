@@ -1,0 +1,1 @@
+{"author":"codeandzahid","dependencies":{},"description":"Socializeit — write a post once and publish it to Facebook, YouTube and TikTok together. Video-first, light, and simple.","engines":{"node":">=22.5"},"license":"MIT","main":"server.js","name":"socializeit","private":true,"scripts":{"start":"node server.js","test":"node test/smoke.js"},"version":"0.1.0"}

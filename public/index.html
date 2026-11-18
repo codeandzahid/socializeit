@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Socializeit — post once, everywhere</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="row">
+    <div>
+      <h1>Socializeit</h1>
+      <p>Write once. Post to Facebook, YouTube and TikTok together.</p>
+    </div>
+    <a class="settings-link" href="/settings">Settings</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="notice"></div>
+
+  <!-- New post -->
+  <section class="card" id="composer">
+    <h2>New post</h2>
+    <form id="post-form">
+      <label for="caption">What do you want to say?</label>
+      <textarea id="caption" name="caption" placeholder="Write your post..."></textarea>
+
+      <label>Video or photo</label>
+      <div class="file-box" id="file-box">
+        <input type="file" id="media" name="media" accept="video/*,image/*">
+        <span id="file-label"><strong>Tap to pick a video or photo</strong><br>Video goes to all three as a Reel / Short. Photo goes to Facebook and TikTok.</span>
+      </div>
+      <div class="media-preview" id="media-preview"></div>
+
+      <label>Where to post</label>
+      <div class="net-row" id="net-row">
+        <div class="net-chip on" data-net="facebook" role="button" tabindex="0">Facebook<span class="sub">Reel / photo / text</span></div>
+        <div class="net-chip on" data-net="youtube" role="button" tabindex="0">YouTube<span class="sub">Short / video</span></div>
+        <div class="net-chip on" data-net="tiktok" role="button" tabindex="0">TikTok<span class="sub">Video / photo</span></div>
+      </div>
+      <p class="small" id="net-hint"></p>
+
+      <div id="yt-title-wrap">
+        <label for="title_yt">YouTube title</label>
+        <input type="text" id="title_yt" name="title_yt" maxlength="100" placeholder="Title for YouTube (uses your post text if empty)">
+      </div>
+
+      <details id="more-titles">
+        <summary>More titles (optional)</summary>
+        <label for="title_fb">Facebook title</label>
+        <input type="text" id="title_fb" name="title_fb" placeholder="Title for Facebook (optional)">
+        <label for="title_tt">TikTok title</label>
+        <input type="text" id="title_tt" name="title_tt" placeholder="Title for TikTok (optional)">
+      </details>
+
+      <label>When</label>
+      <div class="net-row">
+        <div class="net-chip on" data-when="now" role="button" tabindex="0">Post now</div>
+        <div class="net-chip" data-when="schedule" role="button" tabindex="0">Schedule</div>
+      </div>
+      <div id="schedule-wrap" style="display:none">
+        <label for="scheduled_at">Date and time</label>
+        <input type="datetime-local" id="scheduled_at" name="scheduled_at">
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit" id="submit-btn">Post it</button>
+      </div>
+      <p class="small" id="form-error" style="color: var(--red);"></p>
+    </form>
+  </section>
+
+  <!-- Scheduled posts -->
+  <section class="card">
+    <h2>Your posts</h2>
+    <div id="posts-list"><p class="empty">No posts yet. Write your first one above.</p></div>
+  </section>
+
+  <!-- Accounts -->
+  <section class="card">
+    <h2>Accounts</h2>
+    <div id="accounts-list"><p class="empty">Loading...</p></div>
+    <p class="small">To connect a network, add its keys in <a href="/settings">Settings</a> first, then tap Connect. Tokens are stored encrypted on this machine only.</p>
+  </section>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>
